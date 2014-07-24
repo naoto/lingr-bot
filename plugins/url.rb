@@ -15,7 +15,7 @@ private
       case uri
       when /twitter.com/
         get_tweet(uri)
-      when /page6.auctions.yahoo.co.jp/
+      when /auctions.yahoo.co.jp/
         get_auction(uri)
       else
         Nokogiri::HTML(open(URI.escape(uri))).title
