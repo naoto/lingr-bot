@@ -14,7 +14,7 @@ module Lingr::Bot
     end
 
     def text
-      @data["events"]["message"]["text"]
+      @data["events"].first["message"]["text"]
     end
 
   end
