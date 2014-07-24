@@ -6,11 +6,13 @@ module Lingr::Bot
     end
 
     def initialize(message)
-      text = nil
       plugins.each do |plugin|
-        text ||= plugin.reply message
+        @text ||= plugin.reply message
       end
-      text
+    end
+
+    def text
+      @text
     end
 
     def plugins
