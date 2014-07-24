@@ -20,7 +20,7 @@ module Lingr::Bot
     def load_plugin
       plugins = []
       Dir::glob("plugins/*.rb").each do |file|
-        require "plugins/#{File.basename(file)}"
+        Dir[File.join(File.expand_path('plugins'), '*.rb')]
         plugins << const_get(File.basename(file, '.rb').camelize)
       end
       plugins
