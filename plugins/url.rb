@@ -3,7 +3,7 @@ require 'open-uri'
 
 class Url
 
-  def replay(message)
+  def reply(message)
     URI.extract(message.text, %w(http https)).map { |uri| page_title(uri) }.each do |title|
       return title
     end

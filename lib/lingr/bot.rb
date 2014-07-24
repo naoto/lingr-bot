@@ -10,7 +10,7 @@ module Lingr
 
     require 'lingr/bot/server'
     require 'lingr/bot/message'
-    require 'lingr/bot/replay'
+    require 'lingr/bot/reply'
     require 'lingr/bot/option'
 
 

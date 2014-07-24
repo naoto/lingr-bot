@@ -7,7 +7,7 @@ module Lingr::Bot
     post '/' do
       request.body.rewind
       message = Message.new(request.body)
-      Replay.send message
+      Reply.toke message
     end
 
   end
