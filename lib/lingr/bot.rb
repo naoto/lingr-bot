@@ -6,6 +6,7 @@ module Lingr
     require 'json'
     require 'sinatra'
     require 'optparse'
+    require 'rinne'
 
     require 'lingr/bot/server'
     require 'lingr/bot/message'
