@@ -21,7 +21,7 @@ module Lingr::Bot
       plugins = []
       Dir::glob("plugins/*.rb").each do |file|
         Dir[File.join(File.expand_path('plugins'), '*.rb')]
-        plugins << Lingr::Bot.const_get(Rinne.camelize(File.basename(file, '.rb')))
+        plugins << Object.const_get(Rinne.camelize(File.basename(file, '.rb')))
       end
       plugins
     end
