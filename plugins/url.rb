@@ -15,9 +15,18 @@ private
       case uri
       when /twitter.com/
         get_tweet(uri)
+      when /page6.auctions.yahoo.co.jp/
+        get_auction(uri)
       else
         Nokogiri::HTML(open(URI.escape(uri))).title
       end
+    end
+
+    def get_auction(uri)
+      body = Nokogiri::HTML(open(uri))
+      image = body.at("#acMdThumPhoto")["src"]
+      price = body.at(".decTxtAucPrice").content
+      "現在価格: #{price} - #{image}"
     end
 
     def get_tweet(uri)
